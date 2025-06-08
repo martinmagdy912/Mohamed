@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>أدخل الكود</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f2f2f2;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>أدخل الكود للوصول:</h2>
+  <input type="text" id="codeInput" placeholder="اكتب الكود هنا" />
+  <br>
+  <button onclick="checkCode()">دخول</button>
+
+  <p id="result" style="font-weight: bold; color: green; margin-top: 20px;"></p>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById("codeInput").value.trim();
+      const correctCode = "ERHT12321";
+
+      if (code === correctCode) {
+        document.getElementById("result").innerHTML =
+          "🎉 مبروك ضيعت من وقتك 😂<br><a href='https://discord.gg/a2bQTZqd' target='_blank'>ادخل سيرفرنا من هنا</a>";
+      } else {
+        document.getElementById("result").style.color = "red";
+        document.getElementById("result").textContent = "❌ الكود غلط، حاول تاني!";
+      }
+    }
+  </script>
+
+</body>
+</html>
